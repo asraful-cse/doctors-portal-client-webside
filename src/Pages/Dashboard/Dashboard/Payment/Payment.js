@@ -11,7 +11,9 @@ const Payment = () => {
 	const { appointmentId } = useParams();
 	const [appointment, setAppointment] = useState({});
 	useEffect(() => {
-		fetch(`http://localhost:5000/appointments/${appointmentId}`)
+		fetch(
+			`https://serene-refuge-45258.herokuapp.com/appointments/${appointmentId}`
+		)
 			.then((res) => res.json())
 			.then((data) => setAppointment(data));
 	}, [appointmentId]);
@@ -23,18 +25,24 @@ const Payment = () => {
 				{appointment?.serviceName}
 			</h2>
 			<h3>Pay : $ {appointment?.price}</h3>
-			<Elements stripe={stripePromise}>
-				<CheckoutForm key={appointment?._id} appointment={appointment} />
-			</Elements>
+			{appointment?.price && (
+				<Elements stripe={stripePromise}>
+					<CheckoutForm key={appointment?._id} appointment={appointment} />
+				</Elements>
+			)}
 		</div>
 	);
 };
 
 export default Payment;
 /*
-1.install stripe and stripe-react
-2. set publishable key my stripe account key copy paste
-3. elements 
+1. Install stripe and stripe-react
+2. Set publishable key my stripe account key copy paste
+3. Elements 
 4. Checkout form
 5. Create payment method
+6. Server create payment intent api 
+7. Load client secret 
+8. ConfirmCard payment 
+9. Handle user error
 */
