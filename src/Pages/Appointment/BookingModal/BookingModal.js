@@ -54,7 +54,7 @@ const BookingModal = ({
 			date: date.toLocaleDateString(),
 		};
 		// send to the server
-		fetch("https://serene-refuge-45258.herokuapp.com/appointments", {
+		fetch("https://doctors-portal-server-695n.onrender.com/appointments", {
 			method: "POST",
 			headers: {
 				"content-type": "application/json",

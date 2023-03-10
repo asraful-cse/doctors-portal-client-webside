@@ -17,7 +17,7 @@ const AddDoctor = () => {
 		formData.append("email", email);
 		formData.append("image", image);
 
-		fetch("https://serene-refuge-45258.herokuapp.com/doctors", {
+		fetch("https://doctors-portal-server-695n.onrender.com/doctors", {
 			method: "POST",
 			body: formData,
 		})

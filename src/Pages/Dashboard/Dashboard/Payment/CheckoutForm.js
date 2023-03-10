@@ -16,7 +16,7 @@ const CheckoutForm = ({ appointment }) => {
 	const [processing, setProcessing] = useState(false);
 
 	useEffect(() => {
-		fetch("https://serene-refuge-45258.herokuapp.com/create-payment-intent", {
+		fetch("https://doctors-portal-server-695n.onrender.com/create-payment-intent", {
 			method: "POST",
 			headers: {
 				"content-type": "application/json",
@@ -77,7 +77,7 @@ const CheckoutForm = ({ appointment }) => {
 				last4: paymentMethod.card.last4,
 				transaction: paymentIntent.client_secret.slice("_secret"[0]),
 			};
-			const url = `https://serene-refuge-45258.herokuapp.com/appointments/${_id}`;
+			const url = `https://doctors-portal-server-695n.onrender.com/appointments/${_id}`;
 			fetch(url, {
 				method: "PUT",
 				headers: {

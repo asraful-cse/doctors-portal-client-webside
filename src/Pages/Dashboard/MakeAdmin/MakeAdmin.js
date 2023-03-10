@@ -12,7 +12,7 @@ const MakeAdmin = () => {
 	};
 	const handleAdminSubmit = (e) => {
 		const user = { email };
-		fetch("https://serene-refuge-45258.herokuapp.com/users/admin", {
+		fetch("https://doctors-portal-server-695n.onrender.com/users/admin", {
 			method: "PUT",
 			headers: {
 				authorization: `Bearer ${token}`,

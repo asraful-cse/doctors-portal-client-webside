@@ -12,7 +12,7 @@ const Payment = () => {
 	const [appointment, setAppointment] = useState({});
 	useEffect(() => {
 		fetch(
-			`https://serene-refuge-45258.herokuapp.com/appointments/${appointmentId}`
+			`https://doctors-portal-server-695n.onrender.com/appointments/${appointmentId}`
 		)
 			.then((res) => res.json())
 			.then((data) => setAppointment(data));

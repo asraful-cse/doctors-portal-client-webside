@@ -16,7 +16,7 @@ const Appointments = ({ date }) => {
 	const [appointments, setAppointments] = useState([]);
 
 	useEffect(() => {
-		const url = `https://serene-refuge-45258.herokuapp.com/appointments?email=${
+		const url = `https://doctors-portal-server-695n.onrender.com/appointments?email=${
 			user.email
 		}&date=${date.toLocaleDateString()}`;
 		fetch(url, {
